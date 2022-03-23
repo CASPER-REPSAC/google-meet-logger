@@ -3,10 +3,8 @@
 
 class Member {
     constructor(){
-        this.name_list = ["Niverse U", "김종민_7202"];
-        // this.name_list = ["이예나","박수린","이준서","황원민","황대겸","황태웅","모진성","송민아","김준표","홍록경","정소연","위주언","박성용","김수빈","김지언","정성호","차원제","윤진혁","김지균","박강현","원대로","황준식","서재민","문승찬","최정윤","서예은","변지성","이진우"];
-        this.join_attr = {"timestamp" : ""};
-        this.getout_attr = {"timestamp" : ""};
+        // this.name_list = ["Niverse U", "김종민_7202"];
+        this.name_list = ["이예나","박수린","이준서","황원민","황대겸","황태웅","모진성","송민아","김준표","홍록경","정소연","위주언","박성용","김수빈","김지언","정성호","차원제","윤진혁","김지균","박강현","원대로","황준식","서재민","문승찬","최정윤","서예은","변지성","이진우"];
         this.google_meet_user_list = [];
         this.member_state = this.createMemberList();
     }
@@ -18,6 +16,7 @@ class Member {
             return_data[name] = {}
             return_data[name]["join_in"] = [];
             return_data[name]["get_out"] = [];
+            return_data[name]["status"] = 0;
         }
 
         return return_data;
@@ -49,6 +48,7 @@ class Member {
                 const tmp_join_attr = {"timestamp" : new Date().toLocaleString()};
 
                 this.member_state[name]["join_in"].push(tmp_join_attr);
+                this.member_state[name]["status"] = 1;
             }
 
             // 나간 후, 다시 들어 왔을 경우
@@ -56,6 +56,7 @@ class Member {
                 const tmp_join_attr = {"timestamp" : new Date().toLocaleString()};
 
                 this.member_state[name]["join_in"].push(tmp_join_attr);
+                this.member_state[name]["status"] = 1;
             }
         }
 
@@ -75,6 +76,7 @@ class Member {
                 const tmp_getout_attr = {"timestamp" : new Date().toLocaleString()};
 
                 this.member_state[name]["get_out"].push(tmp_getout_attr);
+                this.member_state[name]["status"] = 0;
             }
         }
     }

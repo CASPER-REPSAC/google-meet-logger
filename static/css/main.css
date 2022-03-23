@@ -1,0 +1,47 @@
+body{
+    margin: 2%;
+}
+table{
+    border-collapse: collapse;
+    border: 1px solid #444444;
+}
+th, td {
+    border: 1px solid #444444;
+}
+
+
+.logger-header{
+    font-weight: bold;
+    text-align: center;
+    background-color: #afafaf;
+}
+
+.logger-name{
+    width: 100px;
+}
+.logger-report{
+    min-width: 200px;
+}
+
+.report-body{
+    padding: 5px;
+}
+.connect{
+    width:40px;
+    height:40px;
+    border-radius:75px;
+    text-align:center;
+    font-weight: bold;
+    /* margin:0 auto; */
+    font-size:12px;
+    vertical-align:middle;
+    line-height:40px;
+}
+
+.online{
+    background-color:rgb(0, 199, 0);
+}
+
+.offline{
+    background-color:rgb(255, 64, 64);
+}

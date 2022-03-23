@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head><title>My Test Extension Options</title></head>
-<body>
+	<head>
+		<title>Google Meet Logger</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/main.css">
+	</head>
+	<body>
+		<table class="logger-table" border="1">
+			<thead class="logger-header">
+				<tr>
+					<td class="logger-name">이름</td>
+					<td class="logger-report">접속 기록</td>
+					<td class="logger-status">현재 상태</td>
+				</tr>
+			</thead>
+			<tbody class="logger-body">
+				<tr class="logger-body">
+					<td class="logger-name">{{name}}</td>
+					<td class="logger-report">
+						<div class="report-body d-inline-block">
+							<div class="connect offline">
+								Dis
+							</div>
+							<div class="time">
+								12:21:23
+							</div>
+						</div>
 
-Favorite color:
-<select id="color">
- <option value="red">red</option>
- <option value="green">green</option>
- <option value="blue">blue</option>
- <option value="yellow">yellow</option>
-</select>
+						<div class="report-body d-inline-block">
+							<div class="connect online">
+								Con
+							</div>
+							<div class="time">
+								12:21:23
+							</div>
+						</div>
+					</td>
+					<td class="logger-status"></td>
+				</tr>
+			</tbody>
+		</table>
 
-<label>
-  <input type="checkbox" id="like">
-  I like colors.
-</label>
-
-<div id="status"></div>
-<button id="save">Save</button>
-<script src="/static/js/main.js"></script>
-</body>
+	<script src="/static/js/main.js"></script>
+	</body>
 </html>
